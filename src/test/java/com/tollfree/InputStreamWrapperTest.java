@@ -13,9 +13,9 @@ public class InputStreamWrapperTest {
     @Test
     public void testRead() throws IOException {
         // setup
-        // Create stream object that contain 2 numbers
+        // Create stream object that contains 2 numbers
         final InputStreamWrapper in = new InputStreamWrapper();
-        final byte[] data = "123\n 456".getBytes();
+        final byte[] data = "123.5\n 456".getBytes();
 
         final InputStream input = new ByteArrayInputStream(data);
 
@@ -25,7 +25,7 @@ public class InputStreamWrapperTest {
 
         // verify
         // the numbers in file are read (i.e. not null) & assert the actual values
-        assertEquals("123", in.numbers.get(0));
+        assertEquals("123.5", in.numbers.get(0));
         assertEquals("456", in.numbers.get(1));
     }
 }
