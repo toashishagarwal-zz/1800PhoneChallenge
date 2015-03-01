@@ -3,6 +3,8 @@ package com.tollfree;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.tollfree.impl.PhoneNumberToAlphabetsConverterImpl;
+import com.tollfree.interfaces.PhoneNumberToAlphabetsConverter;
 import com.tollfree.model.PhoneNumber;
 
 public abstract class Processor {

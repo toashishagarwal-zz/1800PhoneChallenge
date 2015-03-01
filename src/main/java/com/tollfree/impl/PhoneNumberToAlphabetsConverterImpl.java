@@ -1,10 +1,11 @@
-package com.tollfree;
+package com.tollfree.impl;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.tollfree.interfaces.PhoneNumberToAlphabetsConverter;
 import com.tollfree.model.PhoneNumber;
 
 public class PhoneNumberToAlphabetsConverterImpl implements PhoneNumberToAlphabetsConverter {

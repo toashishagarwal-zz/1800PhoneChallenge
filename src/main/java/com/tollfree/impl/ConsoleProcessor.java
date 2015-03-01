@@ -1,7 +1,9 @@
-package com.tollfree;
+package com.tollfree.impl;
 
 import java.util.Scanner;
 
+import com.tollfree.Processor;
+import com.tollfree.interfaces.Strategy;
 import com.tollfree.model.PhoneNumber;
 
 public class ConsoleProcessor extends Processor implements Strategy {

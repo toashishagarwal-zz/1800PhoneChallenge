@@ -7,6 +7,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.tollfree.impl.PhoneNumberToAlphabetsConverterImpl;
+import com.tollfree.interfaces.PhoneNumberToAlphabetsConverter;
 import com.tollfree.model.PhoneNumber;
 
 public class PhoneNumberToAlphabetsConverterTest {

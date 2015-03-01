@@ -1,4 +1,4 @@
-package com.tollfree;
+package com.tollfree.interfaces;
 
 import com.tollfree.model.PhoneNumber;
 
