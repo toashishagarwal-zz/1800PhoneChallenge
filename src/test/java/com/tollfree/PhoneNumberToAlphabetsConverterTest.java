@@ -12,10 +12,12 @@ import com.tollfree.model.PhoneNumber;
 public class PhoneNumberToAlphabetsConverterTest {
 	
 	private PhoneNumber phone;
+	private PhoneNumberToAlphabetsConverter converter;
 	
 	@Before
 	public void setUp() {
 		phone = new PhoneNumber();
+		converter = new PhoneNumberToAlphabetsConverterImpl();
 	}
 	
 	@Test
@@ -35,7 +37,7 @@ public class PhoneNumberToAlphabetsConverterTest {
 		expectedWords.add("cf");
 		
 		// execute
-		PhoneNumberToAlphabetsConverter.convert(phone);
+		converter.convert(phone);
 		
 		// verify
 		List<String> actualWords = phone.getWords();
@@ -78,7 +80,7 @@ public class PhoneNumberToAlphabetsConverterTest {
 		expectedWords.add("cfi");
 		
 		// execute
-		PhoneNumberToAlphabetsConverter.convert(phone);
+		converter.convert(phone);
 		
 		// verify
 		List<String> actualWords = phone.getWords();
@@ -92,7 +94,7 @@ public class PhoneNumberToAlphabetsConverterTest {
 		phone.setDigits("");
 		
 		// execute
-		PhoneNumberToAlphabetsConverter.convert(phone);
+		converter.convert(phone);
 		
 		// verify
 		List<String> actualWords = phone.getWords();
@@ -105,7 +107,7 @@ public class PhoneNumberToAlphabetsConverterTest {
 		phone.setDigits("    ");
 		
 		// execute
-		PhoneNumberToAlphabetsConverter.convert(phone);
+		converter.convert(phone);
 		
 		// verify
 		List<String> actualWords = phone.getWords();
@@ -121,7 +123,7 @@ public class PhoneNumberToAlphabetsConverterTest {
 		expectedWords.add("1");
 		
 		// execute
-		PhoneNumberToAlphabetsConverter.convert(phone);
+		converter.convert(phone);
 		
 		// verify
 		List<String> actualWords = phone.getWords();
@@ -140,7 +142,7 @@ public class PhoneNumberToAlphabetsConverterTest {
 		expectedWords.add("c1");
 		
 		// execute
-		PhoneNumberToAlphabetsConverter.convert(phone);
+		converter.convert(phone);
 		
 		// verify
 		List<String> actualWords = phone.getWords();
@@ -159,7 +161,7 @@ public class PhoneNumberToAlphabetsConverterTest {
 		expectedWords.add("c");
 		
 		// execute
-		PhoneNumberToAlphabetsConverter.convert(phone);
+		converter.convert(phone);
 		
 		// verify
 		List<String> actualWords = phone.getWords();
@@ -173,7 +175,7 @@ public class PhoneNumberToAlphabetsConverterTest {
 		phone.setDigits("110001");
 		
 		// execute
-		PhoneNumberToAlphabetsConverter.convert(phone);
+		converter.convert(phone);
 		
 		// verify
 		List<String> actualWords = phone.getWords();

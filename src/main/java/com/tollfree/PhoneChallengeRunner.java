@@ -11,6 +11,7 @@ public class PhoneChallengeRunner {
     private static List<PhoneNumber> phoneNumbers = new ArrayList<PhoneNumber>();
     
     public static void main(String[] args) throws Exception {
+        PhoneNumberToAlphabetsConverter converter = new PhoneNumberToAlphabetsConverterImpl();
         if(args.length > 0) {
             System.out.println("Found [" + args.length + "] files. Processing files ...");
             for(int i = 0 ; i< args.length; i++) {
@@ -30,7 +31,7 @@ public class PhoneChallengeRunner {
                 scanner.close();
                 
                 for (PhoneNumber p : phoneNumbers) {
-                    PhoneNumberToAlphabetsConverter.convert(p);
+                    converter.convert(p);
                     System.out.println(p);
                 }
             }
@@ -49,7 +50,7 @@ public class PhoneChallengeRunner {
             }
             stdin.close();
             for (PhoneNumber p : phoneNumbers) {
-                PhoneNumberToAlphabetsConverter.convert(p);
+                converter.convert(p);
                 System.out.println(p);
             }
         }

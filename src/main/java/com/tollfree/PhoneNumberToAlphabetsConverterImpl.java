@@ -7,7 +7,7 @@ import java.util.Map;
 
 import com.tollfree.model.PhoneNumber;
 
-public class PhoneNumberToAlphabetsConverter {
+public class PhoneNumberToAlphabetsConverterImpl implements PhoneNumberToAlphabetsConverter {
 
 	private final static Map<Character, String> dictionary = new HashMap<Character, String>();
 
@@ -22,7 +22,7 @@ public class PhoneNumberToAlphabetsConverter {
 		dictionary.put('9',"wxyz");
 	}
 	
-	public static void convert(final PhoneNumber phone) {
+	public void convert(final PhoneNumber phone) {
 		String digits = phone.getDigits();
 		
 		digits = cleanseDigits(digits);
@@ -53,7 +53,7 @@ public class PhoneNumberToAlphabetsConverter {
 		phone.setWords(result);
 	}
 
-	private static String cleanseDigits(final String digits) {
+	private String cleanseDigits(final String digits) {
 		String temp = removeNonAlphabets(digits);
 		if(areDigitsToBeSkipped(digits)) {
 			temp = temp.replaceAll("00", "");
@@ -64,18 +64,18 @@ public class PhoneNumberToAlphabetsConverter {
 		return temp;
 	}
 
-	private static boolean areDigitsToBeSkipped(final String digits) {
+	private boolean areDigitsToBeSkipped(final String digits) {
 		return digits.indexOf("00") > -1 
 				|| digits.indexOf("01") > -1 
 				|| digits.indexOf("10") > -1 
 				|| digits.indexOf("11") > -1;
 	}
 
-	private static boolean isNoMatchFoundForDigit(final String digits, final int i) {
+	private boolean isNoMatchFoundForDigit(final String digits, final int i) {
 		return digits.charAt(i) == '0' || digits.charAt(i) == '1';
 	}
 	
-	private static String removeNonAlphabets(final String digits) {
+	private String removeNonAlphabets(final String digits) {
 		return digits.replaceAll("\\W", "");
 	}
 }
