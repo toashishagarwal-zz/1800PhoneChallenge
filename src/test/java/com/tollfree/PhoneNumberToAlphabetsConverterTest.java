@@ -18,7 +18,6 @@ public class PhoneNumberToAlphabetsConverterTest {
 		phone = new PhoneNumber();
 	}
 	
-	
 	@Test
 	public void testWordsFor2Digits() throws Exception {
 		// setup
@@ -47,7 +46,6 @@ public class PhoneNumberToAlphabetsConverterTest {
 	@Test
 	public void testWordsFor3Digits() {
 		// setup
-		
 		phone.setDigits("234");
 		
 		List<String> expectedWords = new ArrayList<String>();
