@@ -10,8 +10,8 @@ public class InputStreamWrapper {
     protected List<String> numbers = new ArrayList<String>();
 
     public void read(final InputStream input) throws IOException{
-        BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-        StringBuilder out = new StringBuilder();
+        final BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+        final StringBuilder out = new StringBuilder();
         String line;
         while ((line = reader.readLine()) != null) {
             numbers.add(line.trim());

@@ -14,10 +14,10 @@ public class InputStreamWrapperTest {
     public void testRead() throws IOException {
         // setup
         // Create stream object that contain 2 numbers
-        InputStreamWrapper in = new InputStreamWrapper();
-        byte[] data = "123\n 456".getBytes();
+        final InputStreamWrapper in = new InputStreamWrapper();
+        final byte[] data = "123\n 456".getBytes();
 
-        InputStream input = new ByteArrayInputStream(data);
+        final InputStream input = new ByteArrayInputStream(data);
 
         // execute
         // some operation i.e. read
