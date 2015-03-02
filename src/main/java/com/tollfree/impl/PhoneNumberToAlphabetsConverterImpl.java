@@ -43,7 +43,7 @@ public class PhoneNumberToAlphabetsConverterImpl implements PhoneNumberToAlphabe
 						if(null == alphabets)
 							break;
 						for(int j = 0; j < alphabets.length(); j++) 
-							rawResult.add(temp + alphabets.charAt(j));
+							rawResult.add((temp + alphabets.charAt(j)).toUpperCase());
 					}
 					
 			}
@@ -77,6 +77,7 @@ public class PhoneNumberToAlphabetsConverterImpl implements PhoneNumberToAlphabe
 	}
 	
 	private String removeNonAlphabets(final String digits) {
-		return digits.replaceAll("\\W", "");
+	    // Regex for keeping only numbers & period 
+		return digits.replaceAll("([\\W&&[^.]])*", "");
 	}
 }
